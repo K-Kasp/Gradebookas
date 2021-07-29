@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Grades extends Model
+class Grade extends Model
 {
     public function lecture()
     {
-        return $this->belongsTo('App\Lectures');
+        return $this->belongsTo('App\Lecture');
     }
 
     public function student()
     {
-        return $this->belongsTo('App\Students');
+        return $this->belongsTo('App\Student');
     }
 }

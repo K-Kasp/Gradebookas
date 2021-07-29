@@ -1,8 +1,6 @@
 <?php
-namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,17 +11,17 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = new App\User([
-            'name' => 'Vilius.C',
-            'email' => 'vilius@mail.com',
-            'password' => bcrypt('password'),
+        $user = new \App\User([
+            'name' => 'Jonas.D',
+            'email' => 'jonas@mail.com',
+            'password' => bcrypt('secret'),
         ]);
         $user->save();
 
-        $user = new App\User([
+        $user = new \App\User([
             'name' => 'Mantas.D',
             'email' => 'mantas@mail.com',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('secret'),
         ]);
         $user->save();
     }

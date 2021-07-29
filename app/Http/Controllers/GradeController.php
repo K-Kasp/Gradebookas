@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Grades;
-use App\Lectures;
-use App\Students;
+use App\Grade;
+use App\Lecture;
+use App\Student;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
     public function getGrade($id)
     {
-        $lectures = Lectures::all();
-        $student = Students::find($id);
+        $lectures = Lecture::all();
+        $student = Student::find($id);
 
         return view('grade', ['student' => $student, 'id' => $id, 'lectures' => $lectures]);
     }
 
     public function storeGrade($id)
     {
-        $student = Students::find($id);
-        $grade = new Grades;
+        $student = Student::find($id);
+        $grade = new Grade;
         $grade->lecture_id = request('lectureIdI');
         $grade->student_id = $student->id;
         $grade->comment = request('commentI');

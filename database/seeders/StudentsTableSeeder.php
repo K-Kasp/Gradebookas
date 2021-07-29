@@ -1,11 +1,8 @@
 <?php
-namespace Database\Seeders;
 
-use Illuminate\Database\Seeders;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Seeder;
 
-
-class StudentsTableSeeder extends Seeders
+class StudentsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +11,7 @@ class StudentsTableSeeder extends Seeders
      */
     public function run()
     {
-        $student = new App\Students([
+        $student = new \App\Student([
             'name' => 'Antanas',
             'surname' => 'Gustys',
             'email' => 'antanas@mail.com',
@@ -22,7 +19,7 @@ class StudentsTableSeeder extends Seeders
         ]);
         $student->save();
 
-        $student = new App\Students([
+        $student = new \App\Student([
             'name' => 'Kotryna',
             'surname' => 'Arlaitė',
             'email' => 'kotryna@mail.com',
@@ -30,7 +27,7 @@ class StudentsTableSeeder extends Seeders
         ]);
         $student->save();
 
-        $student = new App\Students([
+        $student = new \App\Student([
             'name' => 'Juozas',
             'surname' => 'Genys',
             'email' => 'juozas@mail.com',
@@ -38,7 +35,7 @@ class StudentsTableSeeder extends Seeders
         ]);
         $student->save();
 
-        $student = new App\Students([
+        $student = new \App\Student([
             'name' => 'Petras',
             'surname' => 'Barsukas',
             'email' => 'petras@mail.com',

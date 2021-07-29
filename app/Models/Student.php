@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Students extends Model
+class Student extends Model
 {
     public function grade()
     {
-        return $this->hasMany('App\Grades');
+        return $this->hasMany('App\Grade');
     }
 }
