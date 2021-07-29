@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Students;
+use App\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function getStudent()
     {
-        $students = Students::all()->sortBy("surname");
+        $students = Student::all()->sortBy("surname");
 
         return view('student', ['students' => $students]);
     }
 
     public function storeStudent(Request $request)
     {
-        $student = new students;
+        $student = new student;
         $student->name = request('nameI');
         $student->surname = request('surnameI');
         $student->email = request('emailI');
@@ -28,13 +28,13 @@ class StudentController extends Controller
 
     public function GetUpdateStudent($id)
     {
-        $student = Students::find($id);
+        $student = Student::find($id);
         return view('update-student', ['student' => $student, 'id' => $id]);
     }
 
     public function updateStudent(Request $request, $id)
     {
-        $student = Students::find($id);
+        $student = Student::find($id);
         $student->name = $request->get('nameI');
         $student->surname = $request->get('surnameI');
         $student->email = $request->get('emailI');
@@ -46,7 +46,7 @@ class StudentController extends Controller
 
     public function destroyStudent($id)
     {
-        Students::find($id)->delete();
+        Student::find($id)->delete();
 
         return redirect(route('student'));
     }

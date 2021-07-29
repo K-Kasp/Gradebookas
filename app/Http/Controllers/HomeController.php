@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lecture;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,10 +20,12 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $lectures = Lecture::all()->sortBy("title");
+
+        return view('lecture', ['lectures' => $lectures]);
     }
 }

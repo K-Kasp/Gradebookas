@@ -1,11 +1,8 @@
 <?php
-namespace Database\Seeders;
 
+use Illuminate\Database\Seeder;
 
-use Illuminate\Database\seeders;
-use Illuminate\Support\Facades\DB;
-
-class LecturesTableSeeder extends seeders
+class LecturesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,25 +11,25 @@ class LecturesTableSeeder extends seeders
      */
     public function run()
     {
-        $lecture = new App\Lectures([
+        $lecture = new \App\Lecture([
             'title' => 'Įžanga į PHP',
             'description' => 'PHP programavimo kalbos pagrindai',
         ]);
         $lecture->save();
 
-        $lecture = new App\Lectures([
+        $lecture = new \App\Lecture([
             'title' => 'PHP if else funkcijos',
             'description' => 'if else funkcojos ir jų panaudojimas',
         ]);
         $lecture->save();
 
-        $lecture = new App\Lectures([
+        $lecture = new \App\Lecture([
             'title' => 'Ciklai',
             'description' => 'Ciklai ir ką su jais daryt',
         ]);
         $lecture->save();
 
-        $lecture = new App\Lectures([
+        $lecture = new \App\Lecture([
             'title' => 'Klasės',
             'description' => 'Pirma paskaita apie PHP klases',
         ]);

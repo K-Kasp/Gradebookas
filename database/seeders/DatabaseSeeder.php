@@ -1,12 +1,8 @@
 <?php
-namespace Database\Seeders;
 
+use Illuminate\Database\Seeder;
 
-
-use Illuminate\Database\Seeders;
-use Illuminate\Support\Facades\DB;
-
-class DatabaseSeeder extends Seeders
+class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -18,6 +14,5 @@ class DatabaseSeeder extends Seeders
         $this->call(LecturesTableSeeder::class);
         $this->call(StudentsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-
     }
 }
