@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,25 +20,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/', 'HomeController@index')->name('lecture');
+Route::get('/', [HomeController::class, 'index'])->name('lecture');
 
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/studentai/pazymiai/{student}', 'GradeController@getGrade')->name('grade');
     Route::post('/studentai/pazymiai/{id}', 'GradeController@storeGrade')->name('storeGrade');
 
+    /* TODO: Atskiri routai, turi toki pati pavadinima, pakeisti, kels problemu */
     Route::get('/paskaitos', 'LectureController@getLecture')->name('lecture');
     Route::post('/paskaitos', 'LectureController@storeLecture')->name('storeLecture');
     Route::get('/paskaitos/{lecture}', 'LectureController@getUpdateLecture')->name('update-lecture');
