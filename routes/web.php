@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\LectureController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('lecture');
+Route::get('/home', [HomeController::class, 'index'])->name('lecture');
 
 Route::group(['middleware' => 'auth'], function() {
 
