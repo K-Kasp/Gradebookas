@@ -37,9 +37,6 @@
     <div class="row">
         <div class="col-12 average">
             <h5>Studento Pažymių Vidurkis: <span class="badge badge-secondary">
-                    @if ($student->grade)
-                    {{round($sum/count($student->grade), 1)}}
-                        @endif
                 </span></h5>
         </div>
     </div>
