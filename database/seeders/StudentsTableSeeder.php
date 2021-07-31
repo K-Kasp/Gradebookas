@@ -11,7 +11,7 @@ class StudentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $student = new \App\Student([
+        $student = new App\Models\Student([
             'name' => 'Antanas',
             'surname' => 'Gustys',
             'email' => 'antanas@mail.com',
@@ -19,7 +19,7 @@ class StudentsTableSeeder extends Seeder
         ]);
         $student->save();
 
-        $student = new \App\Student([
+        $student = new App\Models\Student([
             'name' => 'Kotryna',
             'surname' => 'Arlaitė',
             'email' => 'kotryna@mail.com',
@@ -27,7 +27,7 @@ class StudentsTableSeeder extends Seeder
         ]);
         $student->save();
 
-        $student = new \App\Student([
+        $student = new App\Models\Student([
             'name' => 'Juozas',
             'surname' => 'Genys',
             'email' => 'juozas@mail.com',
@@ -35,7 +35,7 @@ class StudentsTableSeeder extends Seeder
         ]);
         $student->save();
 
-        $student = new \App\Student([
+        $student = new App\Models\Student([
             'name' => 'Petras',
             'surname' => 'Barsukas',
             'email' => 'petras@mail.com',
