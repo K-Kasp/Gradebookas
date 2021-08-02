@@ -10,7 +10,7 @@ class Lecture extends Model
 
     public function grade()
     {
-        return $this->hasMany('App\Grade');
+        return $this->hasMany('App\Models\Grade');
     }
 }
 

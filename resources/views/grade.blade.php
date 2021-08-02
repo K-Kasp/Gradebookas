@@ -34,11 +34,7 @@
             </table>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 average">
-            <h5>Studento Pažymių Vidurkis: <span class="badge badge-secondary">
-                </span></h5>
-        </div>
+    
     </div>
 
 @endsection

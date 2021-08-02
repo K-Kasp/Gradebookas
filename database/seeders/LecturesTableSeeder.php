@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Lecture;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -16,27 +17,26 @@ class LecturesTableSeeder extends Seeder
      */
     public function run()
     {
-        $lecture = new App\Models\Student([
-            'title' => 'Įžanga į PHP',
-            'description' => 'PHP programavimo kalbos pagrindai',
+        $lecture = new Lecture([
+            'title' => 'Įžanga į HTML',
+            'description' => 'HTML programavimo kalbos pagrindai',
+        ]);
+        $lecture->save();
+        $lecture = new Lecture([
+            'title' => 'CSS bei BOOTSTRAP',
+            'description' => 'Css bei Bootstrap pradmenys',
         ]);
         $lecture->save();
 
-        $lecture = new App\Models\Student([
-            'title' => 'PHP if else funkcijos',
-            'description' => 'if else funkcojos ir jų panaudojimas',
+        $lecture = new Lecture([
+            'title' => 'Projektas',
+            'description' => 'Finalinis projektas',
         ]);
         $lecture->save();
 
-        $lecture = new App\Models\Student([
-            'title' => 'Ciklai',
-            'description' => 'Ciklai ir ką su jais daryt',
-        ]);
-        $lecture->save();
-
-        $lecture = new App\Models\Student([
-            'title' => 'Klasės',
-            'description' => 'Pirma paskaita apie PHP klases',
+        $lecture = new Lecture([
+            'title' => 'Javascript',
+            'description' => 'Pirma paskaita apie Javascript',
         ]);
         $lecture->save();
     }
